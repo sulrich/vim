@@ -1,0 +1,31 @@
+# overview
+
+my personal collection of vim shiz. plugins are kept in submodules (this assumes
+that the modules are available via git) things which aren't necessarily standard
+submodules are integrated into this repo directly.
+
+
+# plugins
+
+## installation
+
+```
+git submodule add <git-clone-url> pack/default/start
+git commit # to actually commit the submodule
+```
+
+## refresh
+```
+git submodule update --remote --merge
+git commit
+```
+
+## package removal
+
+```
+git submodule deinit <local-path-to-submodule-entry>
+git rm <local-path-to-submodule-entry>
+rm -rf .git/modules/pack/default/start/<local-package-dir-name>
+git commit
+```
+
