@@ -1,0 +1,81 @@
+[submodule "pack/themes/opt/solarized8"]
+	path = pack/themes/opt/solarized8
+	url = git@github.com:lifepillar/vim-solarized8.git
+[submodule "pack/default/start/yang"]
+	path = pack/default/start/yang
+	url = git@github.com:nathanalderson/yang.vim.git
+[submodule "pack/default/start/vim-surround"]
+	path = pack/default/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "pack/default/start/vim-snippets"]
+	path = pack/default/start/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "pack/default/start/vim-repeat"]
+	path = pack/default/start/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule "pack/default/start/vim-polyglot"]
+	path = pack/default/start/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot
+[submodule "pack/default/start/vim-pencil"]
+	path = pack/default/start/vim-pencil
+	url = git@github.com:reedes/vim-pencil
+[submodule "pack/default/start/vim-markdown"]
+	path = pack/default/start/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown.git
+[submodule "pack/default/start/vim-json"]
+	path = pack/default/start/vim-json
+	url = git@github.com:elzr/vim-json.git
+[submodule "pack/default/start/vim-javascript"]
+	path = pack/default/start/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule "pack/default/start/vim-isort"]
+	path = pack/default/start/vim-isort
+	url = git@github.com:fisadev/vim-isort.git
+[submodule "pack/default/start/vim-indent-guides"]
+	path = pack/default/start/vim-indent-guides
+	url = git@github.com:nathanaelkane/vim-indent-guides.git
+[submodule "pack/default/start/vim-go"]
+	path = pack/default/start/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "pack/default/start/vim-gitgutter"]
+	path = pack/default/start/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "pack/default/start/vim-fugitive"]
+	path = pack/default/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "pack/default/start/vim-autoclose"]
+	path = pack/default/start/vim-autoclose
+	url = git@github.com:Townk/vim-autoclose.git
+[submodule "pack/default/start/vim-airline-themes"]
+	path = pack/default/start/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "pack/default/start/vim-airline"]
+	path = pack/default/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline
+[submodule "pack/default/start/vim-ultisnips"]
+	path = pack/default/start/vim-ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "pack/default/start/tabular"]
+	path = pack/default/start/tabular
+	url = git@github.com:godlygeek/tabular.git
+[submodule "pack/default/start/notational-fzf-vim"]
+	path = pack/default/start/notational-fzf-vim
+	url = git@github.com:alok/notational-fzf-vim.git
+[submodule "pack/default/start/nerdtree"]
+	path = pack/default/start/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "pack/default/start/nerdcommenter"]
+	path = pack/default/start/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "pack/default/start/gist-vim"]
+	path = pack/default/start/gist-vim
+	url = git@github.com:mattn/gist-vim.git
+[submodule "pack/default/start/ghost-text-vim"]
+	path = pack/default/start/ghost-text-vim
+	url = git@github.com:pandysong/ghost-text.vim.git
+[submodule "pack/default/start/dash.vim"]
+	path = pack/default/start/dash.vim
+	url = git@github.com:rizzatti/dash.vim.git
+[submodule "pack/default/start/ale"]
+	path = pack/default/start/ale
+	url = git@github.com:w0rp/ale.git
