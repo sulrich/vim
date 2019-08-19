@@ -16,7 +16,7 @@ git commit # to actually commit the submodule
 
 ## refresh
 ```
-git submodule update --remote --merge
+git submodule update --remote --merge --recursive
 git commit
 ```
 
@@ -29,3 +29,9 @@ rm -rf .git/modules/pack/default/start/<local-package-dir-name>
 git commit
 ```
 
+## new host
+
+```
+git clone https://github.com/sulrich/vim.git
+git submodule update --recursive
+```
