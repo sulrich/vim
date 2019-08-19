@@ -7,20 +7,20 @@ submodules are integrated into this repo directly.
 
 # plugins
 
-## installation
+## plugin: installation
 
 ```
 git submodule add <git-clone-url> pack/default/start
 git commit # to actually commit the submodule
 ```
 
-## refresh
+## plugin: refresh
 ```
 git submodule update --remote --merge --recursive
 git commit
 ```
 
-## package removal
+## plugin: removal
 
 ```
 git submodule deinit <local-path-to-submodule-entry>
@@ -29,9 +29,9 @@ rm -rf .git/modules/pack/default/start/<local-package-dir-name>
 git commit
 ```
 
-## new host
+# new host installation
 
 ```
 git clone https://github.com/sulrich/vim.git
-git submodule update --recursive
+git submodule update --init
 ```
