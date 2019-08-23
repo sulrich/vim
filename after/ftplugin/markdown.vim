@@ -1,15 +1,11 @@
-autocmd BufNewFile,BufFilePre,BufRead *.md 
- \ set filetype plugin off
- \ set filetype indent off
- \ set filetype=markdown 
- \ textwidth=0 
- \ wrapmargin=0 
- \ wrap 
- \ linebreak 
- \ nolist 
+setlocal textwidth=79
+setlocal wrapmargin=0 
+setlocal wrap 
+setlocal linebreak 
+setlocal nolist 
 
 setlocal comments=fb:-,fb:*
-" setlocal autoindent
+setlocal autoindent
 setlocal colorcolumn=0
 setlocal linebreak
 setlocal nonumber
