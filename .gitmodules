@@ -64,9 +64,6 @@
 [submodule "pack/default/start/nerdtree"]
 	path = pack/default/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
-[submodule "pack/default/start/nerdcommenter"]
-	path = pack/default/start/nerdcommenter
-	url = git@github.com:scrooloose/nerdcommenter.git
 [submodule "pack/default/start/gist-vim"]
 	path = pack/default/start/gist-vim
 	url = git@github.com:mattn/gist-vim.git
