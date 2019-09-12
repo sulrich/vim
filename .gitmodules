@@ -79,3 +79,6 @@
 [submodule "pack/default/start/vim-commentary"]
 	path = pack/default/start/vim-commentary
 	url = https://tpope.io/vim/commentary.git
+[submodule "pack/default/start/jedi-vim"]
+	path = pack/default/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
