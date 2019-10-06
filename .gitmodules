@@ -70,9 +70,6 @@
 [submodule "pack/default/start/dash.vim"]
 	path = pack/default/start/dash.vim
 	url = git@github.com:rizzatti/dash.vim.git
-[submodule "pack/default/start/ale"]
-	path = pack/default/start/ale
-	url = git@github.com:w0rp/ale.git
 [submodule "pack/default/start/vim-commentary"]
 	path = pack/default/start/vim-commentary
 	url = https://tpope.io/vim/commentary.git
