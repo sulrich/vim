@@ -58,9 +58,6 @@
 [submodule "pack/default/start/tabular"]
 	path = pack/default/start/tabular
 	url = git@github.com:godlygeek/tabular.git
-[submodule "pack/default/start/notational-fzf-vim"]
-	path = pack/default/start/notational-fzf-vim
-	url = git@github.com:alok/notational-fzf-vim.git
 [submodule "pack/default/start/nerdtree"]
 	path = pack/default/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
