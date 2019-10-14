@@ -76,3 +76,6 @@
 [submodule "pack/default/start/notational-fzf-vim"]
 	path = pack/default/start/notational-fzf-vim
 	url = https://github.com/alok/notational-fzf-vim.git
+[submodule "pack/default/start/auto-pairs"]
+	path = pack/default/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
