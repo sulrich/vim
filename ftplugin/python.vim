@@ -18,6 +18,7 @@ let b:ale_linters = ['flake8', 'pylint']
 " fix python files with black
 let b:ale_fixers = ['black']
 
+let g:ale_sign_column_always = 1
+
 " i'm doing everything in python3 these days.
 let g:pymode_python = 'python3'
-
