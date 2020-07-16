@@ -61,9 +61,6 @@
 [submodule "pack/default/start/gist-vim"]
 	path = pack/default/start/gist-vim
 	url = https://github.com/mattn/gist-vim.git
-[submodule "pack/default/start/ghost-text-vim"]
-	path = pack/default/start/ghost-text-vim
-	url = https://github.com/pandysong/ghost-text.vim.git
 [submodule "pack/default/start/dash.vim"]
 	path = pack/default/start/dash.vim
 	url = https://github.com/rizzatti/dash.vim.git
