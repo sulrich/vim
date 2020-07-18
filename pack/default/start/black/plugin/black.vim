@@ -24,7 +24,11 @@ endif
 
 let g:load_black = "py1.0"
 if !exists("g:black_virtualenv")
-  let g:black_virtualenv = "~/.vim/black"
+  if has("nvim")
+    let g:black_virtualenv = "~/.local/share/nvim/black"
+  else
+    let g:black_virtualenv = "~/.vim/black"
+  endif
 endif
 if !exists("g:black_fast")
   let g:black_fast = 0
@@ -37,10 +41,17 @@ if !exists("g:black_skip_string_normalization")
 endif
 
 python3 << endpython3
+import os
 import sys
 import vim
 
 def _get_python_binary(exec_prefix):
+  try:
+    default = vim.eval("g:pymode_python").strip()
+  except vim.error:
+    default = ""
+  if default and os.path.exists(default):
+    return default
   if sys.platform[:3] == "win":
     return exec_prefix / 'python.exe'
   return exec_prefix / 'bin' / 'python3'
@@ -87,8 +98,8 @@ def _initialize_black_env(upgrade=False):
     print('DONE! You are all set, thanks for waiting ✨ 🍰 ✨')
   if first_install:
     print('Pro-tip: to upgrade Black in the future, use the :BlackUpgrade command and restart Vim.\n')
-  if sys.path[0] != virtualenv_site_packages:
-    sys.path.insert(0, virtualenv_site_packages)
+  if virtualenv_site_packages not in sys.path:
+    sys.path.append(virtualenv_site_packages)
   return True
 
 if _initialize_black_env():
@@ -98,21 +109,33 @@ if _initialize_black_env():
 def Black():
   start = time.time()
   fast = bool(int(vim.eval("g:black_fast")))
-  line_length = int(vim.eval("g:black_linelength"))
-  mode = black.FileMode.AUTO_DETECT
-  if bool(int(vim.eval("g:black_skip_string_normalization"))):
-    mode |= black.FileMode.NO_STRING_NORMALIZATION
+  mode = black.FileMode(
+    line_length=int(vim.eval("g:black_linelength")),
+    string_normalization=not bool(int(vim.eval("g:black_skip_string_normalization"))),
+    is_pyi=vim.current.buffer.name.endswith('.pyi'),
+  )
   buffer_str = '\n'.join(vim.current.buffer) + '\n'
   try:
-    new_buffer_str = black.format_file_contents(buffer_str, line_length=line_length, fast=fast, mode=mode)
+    new_buffer_str = black.format_file_contents(buffer_str, fast=fast, mode=mode)
   except black.NothingChanged:
     print(f'Already well formatted, good job. (took {time.time() - start:.4f}s)')
   except Exception as exc:
     print(exc)
   else:
-    cursor = vim.current.window.cursor
+    current_buffer = vim.current.window.buffer
+    cursors = []
+    for i, tabpage in enumerate(vim.tabpages):
+      if tabpage.valid:
+        for j, window in enumerate(tabpage.windows):
+          if window.valid and window.buffer == current_buffer:
+            cursors.append((i, j, window.cursor))
     vim.current.buffer[:] = new_buffer_str.split('\n')[:-1]
-    vim.current.window.cursor = cursor
+    for i, j, cursor in cursors:
+      window = vim.tabpages[i].windows[j]
+      try:
+        window.cursor = cursor
+      except vim.error:
+        window.cursor = (len(window.buffer), 0)
     print(f'Reformatted in {time.time() - start:.4f}s.')
 
 def BlackUpgrade():
