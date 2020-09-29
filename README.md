@@ -10,7 +10,7 @@ submodules are integrated into this repo directly.
 ## plugin: installation
 
 ```
-git submodule add <git-clone-url> pack/default/start
+git submodule add <git-clone-url> pack/default/start/<module-directory>
 git commit # to actually commit the submodule
 ```
 
