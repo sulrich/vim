@@ -79,3 +79,6 @@
 [submodule "pack/default/start/ghost-text"]
 	path = pack/default/start/ghost-text
 	url = https://github.com/pandysong/ghost-text.vim.git
+[submodule "pack/default/start/nord-vim"]
+	path = pack/default/start/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git
