@@ -66,7 +66,7 @@
 	url = https://github.com/rizzatti/dash.vim.git
 [submodule "pack/default/start/vim-commentary"]
 	path = pack/default/start/vim-commentary
-	url = https://tpope.io/vim/commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 [submodule "pack/default/start/ale"]
 	path = pack/default/start/ale
 	url = https://github.com/dense-analysis/ale.git
