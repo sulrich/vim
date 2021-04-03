@@ -19,9 +19,6 @@
 [submodule "pack/default/start/vim-pencil"]
 	path = pack/default/start/vim-pencil
 	url = https://github.com/reedes/vim-pencil
-[submodule "pack/default/start/vim-markdown"]
-	path = pack/default/start/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "pack/default/start/vim-json"]
 	path = pack/default/start/vim-json
 	url = https://github.com/elzr/vim-json.git
