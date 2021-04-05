@@ -66,6 +66,10 @@ autocmd BufNewFile,BufRead mutt-* set syntax=mail spell tw=78 fo+=2n ai
 autocmd BufNewFile,BufRead *.txt,*.tex 
  \ set wrap linebreak nolist textwidth=0 wrapmargin=0
 
+" editorconfig elemets
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+au FileType gitcommit let b:EditorConfig_disable = 1
+
 " markdown stuff
 let g:vim_markdown_folding_disabled = 1
 "open markdown files in marked2
