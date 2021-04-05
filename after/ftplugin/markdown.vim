@@ -10,9 +10,9 @@ setlocal colorcolumn=0
 setlocal linebreak
 setlocal nonumber
 setlocal shiftwidth=2
-setlocal spell
 setlocal tabstop=2
 setlocal wrap
+setlocal spell
 
 " ----------------------------------------------------------------------------
 "  markdown configuration
