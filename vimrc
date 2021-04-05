@@ -1,15 +1,15 @@
 set nocp                          " disable compatibility mode - keep @ top!  
 syntax on                         " just turn this on already 
 let mapleader=","                 " better than the use of the \
-
+ 
 set ruler                         " show line # info, etc.
-"set hidden                       
 set encoding=utf-8
 
 set textwidth=80                  " where to wrap
 set shm=at                        " short message
-set formatoptions=tcqrt2          " XXX - document this better
-" set wrap
+
+" let's see what happens with the sensible plugin here. 
+" set formatoptions=tcqrt2          " XXX - document this better
 " set linebreak
 " set wrapwidth=80
 
@@ -36,10 +36,7 @@ set autoread               " if a file changes externally, update buffer
 set softtabstop=2
 set shiftwidth=2
 set expandtab 
-set smarttab                  
-
-set autoindent 
-"set smartindent
+set smarttab
 
 " make the copy/paste operation seamless w/the OS
 set clipboard=unnamed
@@ -64,26 +61,22 @@ let g:nv_default_extension = '.md'
 let g:nv_create_note_key = 'ctrl-x'
 let g:nv_create_note_window = 'tabedit'
 
-" polyglot settings
-let g:polyglot_disabled = ['go']
-
-
-" ghost-vim config elements
-" let g:ghost_text_log_file = "~/tmp/ghost_log.txt"
-
 " mode specific overrides - 
 autocmd BufNewFile,BufRead mutt-* set syntax=mail spell tw=78 fo+=2n ai
 autocmd BufNewFile,BufRead *.txt,*.tex 
  \ set wrap linebreak nolist textwidth=0 wrapmargin=0
 
-" open markdown files in marked2
+" markdown stuff
+let g:vim_markdown_folding_disabled = 1
+"open markdown files in marked2
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
 " nerdtree
-map <F2> :NERDTreeToggle<CR>  
+map <C-o> :NERDTreeToggle<CR>  
 
 " map to something other than escape
 inoremap <C-[> <Esc>
+imap kj <Esc>
 
 " trigger configuration. do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -92,7 +85,6 @@ let g:UltiSnipsListSnippets="<c-tab>"
 let g:UltiSnipsJumpForwardTrigger="<M-j>"
 let g:UltiSnipsJumpBackwardTrigger="<M-k>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
-
 
 " search options
 " ---------------------------------------------------------------------------
@@ -116,13 +108,12 @@ ab cca comments/corrections/additions appreciated
 " autoclose options
 map <leader>ac :AutoCloseToggle<cr>
 
-
 " spell check options. 
 " note: use 'zg' to add the current word to the dictionary
 "---------------------------------------------------------------------
 set spelllang=en_us
 " personal word list
-set spellfile = "~/Dropbox/personal/config/en.utf-8.add"
+set spellfile = "~/iCloud/src/configs/aspell/aspell.en.pws
 
 set spellcapcheck=""                " ignore capitalization 
 nnoremap <silent><leader>s :set spell!<cr>
@@ -130,9 +121,8 @@ nnoremap <silent><leader>S ea<C-X><C-S>
 nnoremap <silent><leader>r 1z=      " replace current word with the first suggestion
 
 
-" protect changes between writes. default values of
-" updatecount (200 keystrokes) and updatetime
-" (4 seconds) are fine
+" protect changes between writes. default values of updatecount (200 keystrokes)
+" and updatetime (4 seconds) are fine
 set swapfile
 set directory^=~/.vim/swap//
 
@@ -162,19 +152,15 @@ set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
-"colorscheme solarized8
 colorscheme nord
  
-
 " do the needful for the statusline
 let g:airline_enable_branch = 1
 let g:airline_powerline_fonts = 1        " requires powerline fonts
 let g:airline#extensions#ale#enabled = 1 " show ale errors on statusline
-" let g:airline_theme='minimalist'
 let g:airline_extensions = [ "ale", "branch", "netrw", "tabline", "virtualenv"  ]
 " this following 2 lines need to be enabled together. 
 let g:airline_theme='nord'
-let g:airline_solarized_bg='dark'
 
 nmap <silent> <C-j> :ALEPrevious<cr>
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
