@@ -1,6 +1,3 @@
-[submodule "pack/themes/opt/solarized8"]
-	path = pack/themes/opt/solarized8
-	url = https://github.com/lifepillar/vim-solarized8.git
 [submodule "pack/default/start/yang"]
 	path = pack/default/start/yang
 	url = https://github.com/nathanalderson/yang.vim.git
