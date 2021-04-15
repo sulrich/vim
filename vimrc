@@ -1,4 +1,4 @@
- " escape alternative - insert-mode
+" escape alternative - insert-mode
 imap kj <Esc>
 let mapleader=","             " better than the use of the \
 
@@ -13,7 +13,6 @@ set autoread               " if a file changes externally, update buffer
 " address the tabs-vs-spaces debate ...
 set softtabstop=2
 set expandtab 
-
 
 " let's see what happens with the sensible plugin here. 
 " set formatoptions=tcqrt2          " XXX - document this better
@@ -78,8 +77,13 @@ ab x70- ----------------------------------------------------------------------
 ab x70= ======================================================================
 ab cca comments/corrections/additions appreciated
 
+" insert my preferred date time stamp
+iab <expr> dstamp strftime("%Y%m%d")
+iab <expr> dts strftime("%Y%m%d-%H%M") 
+
 " spell check options. 
 " note: use 'zg' to add the current word to the dictionary
+" use z= to get a list of the possible spelling suggestions. 
 "---------------------------------------------------------------------
 set spelllang=en_us
 " personal word list
@@ -91,7 +95,7 @@ noremap <silent><leader>s :set spell!<cr>
 nnoremap <silent><leader>S ea<C-X><C-S>
 " replace the current word with the 1st suggestion. 
 " this works - most of the time
-nnoremap <silent><leader>r 1z
+nnoremap <silent><leader>r 1z=
 
 " misc. vim support files and settings. swap, backup, etc.
 set swapfile
@@ -102,7 +106,6 @@ set backupcopy=auto    " use rename-and-write-new method whenever safe
 set backupdir^=~/.vim/backup//
 set undofile           " persist the undo tree for each file
 set undodir^=~/.vim/undo//
-set viminfo=%,'50,\"100,:100,n~/.viminfo
 
 " mode specific settings below
 " ---------------------------------------------------------------------------
@@ -156,4 +159,21 @@ let g:airline_theme='nord'
 nmap <silent> <C-k> :ALEPrevious<cr>
 nmap <silent> <C-j> :ALENext<cr>
 
-set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
+" handle vim vs. neovim differences
+if has('nvim')
+  let $GHOSTTEXT_SERVER_PORT = 4001
+
+  augroup nvim_ghost_user_autocommands
+    au User www.reddit.com,www.stackoverflow.com set filetype=markdown
+    au User partnerissue* set filetype=markdown
+    au User gitlab* set filetype=markdown
+    au User *github.com set filetype=markdown
+  augroup END
+
+else
+  " vim specific config
+  set viminfo=%,'50,\"100,:100,n~/.viminfo
+  set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
+endif
+
+
