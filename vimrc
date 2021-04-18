@@ -120,6 +120,7 @@ autocmd BufNewFile,BufRead *.txt,*.tex
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 let g:markdown_folding = 1
 let g:markdown_enable_folding = 1
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'shell=sh']
 
 " plugin settings below
 " --------------------------------------------------------------------------
