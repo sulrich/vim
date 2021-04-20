@@ -85,6 +85,10 @@ iab <expr> dts strftime("%Y%m%d-%H%M")
 "remove all trailing whitespace by pressing f5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" send stuff to pb
+command! -range=% Pb :<line1>,<line2>w !curl -F c=@- pb
+
+
 " spell check options.
 " note: use 'zg' to add the current word to the dictionary
 " use z= to get a list of the possible spelling suggestions.
