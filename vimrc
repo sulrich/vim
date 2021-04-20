@@ -159,7 +159,9 @@ let g:airline_theme='nord'
 nmap <silent> <C-k> :ALEPrevious<cr>
 nmap <silent> <C-j> :ALENext<cr>
 
-" per suggestion: https://github.com/dense-analysis/ale/issues/371
+" https://github.com/dense-analysis/ale - see the FAQ
+" note, for the mac, i need to match on the expanded iCloud path.  this is
+" what's going on in the first dict entry here. 
 let g:ale_pattern_options = {
 \  '.*CloudDocs/notes/.*\.md$': {'ale_enabled': 0},
 \  '.*\.notes/.*\.md$': {'ale_enabled': 0},
