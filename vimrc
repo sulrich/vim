@@ -12,9 +12,9 @@ set autoread               " if a file changes externally, update buffer
 
 " address the tabs-vs-spaces debate ...
 set softtabstop=2
-set expandtab 
+set expandtab
 
-" let's see what happens with the sensible plugin here. 
+" let's see what happens with the sensible plugin here.
 " set formatoptions=tcqrt2          " XXX - document this better
 " set linebreak
 " set wrapwidth=80
@@ -43,8 +43,8 @@ set wildmenu               " menu has tab completion
 set clipboard=unnamed
 
 " delay before swap is written to the disk (100ms)
-set updatetime=100     
-set ttimeout 
+set updatetime=100
+set ttimeout
 set ttimeoutlen=100
 
 " split preferences
@@ -79,21 +79,25 @@ ab cca comments/corrections/additions appreciated
 
 " insert my preferred date time stamp
 iab <expr> dstamp strftime("%Y%m%d")
-iab <expr> dts strftime("%Y%m%d-%H%M") 
+iab <expr> dts strftime("%Y%m%d-%H%M")
 
-" spell check options. 
+" misc. additional mappings/functions
+"remove all trailing whitespace by pressing f5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" spell check options.
 " note: use 'zg' to add the current word to the dictionary
-" use z= to get a list of the possible spelling suggestions. 
+" use z= to get a list of the possible spelling suggestions.
 "---------------------------------------------------------------------
 set spelllang=en_us
 " personal word list
 set spellfile="~/iCloud/src/configs/aspell/aspell.en.pws"
-set spellcapcheck=""                " ignore capitalization 
+set spellcapcheck=""                " ignore capitalization
 " spell check keybindings
 " spell check the buffer
 noremap <silent><leader>s :set spell!<cr>
 nnoremap <silent><leader>S ea<C-X><C-S>
-" replace the current word with the 1st suggestion. 
+" replace the current word with the 1st suggestion.
 " this works - most of the time
 nnoremap <silent><leader>r 1z=
 
@@ -110,11 +114,6 @@ set undodir^=~/.vim/undo//
 " mode specific settings below
 " ---------------------------------------------------------------------------
 
-" mutt messages
-autocmd BufNewFile,BufRead mutt-* set syntax=mail spell tw=78 fo+=2n ai
-autocmd BufNewFile,BufRead *.txt,*.tex 
- \ set wrap linebreak nolist textwidth=0 wrapmargin=0
-
 " markdown files
 "open markdown files in marked2
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
@@ -125,7 +124,7 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'shell=sh']
 " plugin settings below
 " --------------------------------------------------------------------------
 
-" editorconfig 
+" editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 autocmd FileType gitcommit let b:EditorConfig_disable = 1
 
@@ -144,7 +143,7 @@ let g:nv_create_note_key = 'ctrl-x'
 let g:nv_create_note_window = 'tabedit'
 
 " nerdtree
-map <C-o> :NERDTreeToggle<CR>  
+map <C-o> :NERDTreeToggle<CR>
 
 " dash documentation - search for what the cursor is over
 nmap <silent><leader>d <Plug>DashSearch
@@ -160,6 +159,12 @@ let g:airline_theme='nord'
 nmap <silent> <C-k> :ALEPrevious<cr>
 nmap <silent> <C-j> :ALENext<cr>
 
+" per suggestion: https://github.com/dense-analysis/ale/issues/371
+let g:ale_pattern_options = {
+\  '.*CloudDocs/notes/.*\.md$': {'ale_enabled': 0},
+\  '.*\.notes/.*\.md$': {'ale_enabled': 0},
+\}
+
 " handle vim vs. neovim differences
 if has('nvim')
   let $GHOSTTEXT_SERVER_PORT = 4001
@@ -174,7 +179,8 @@ if has('nvim')
 else
   " vim specific config
   set viminfo=%,'50,\"100,:100,n~/.viminfo
-  set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
 endif
 
 
+set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
+set runtimepath+=/usr/local/opt/fzf
