@@ -73,3 +73,6 @@
 [submodule "pack/default/start/webapi-vim"]
 	path = pack/default/start/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+[submodule "pack/default/start/fzf"]
+	path = pack/default/start/fzf
+	url = https://github.com/junegunn/fzf.vim.git
