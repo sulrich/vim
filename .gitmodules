@@ -76,3 +76,6 @@
 [submodule "pack/default/start/fzf"]
 	path = pack/default/start/fzf
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "pack/default/start/vim-peekaboo"]
+	path = pack/default/start/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo.git
