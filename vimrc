@@ -27,7 +27,16 @@ set showmode           " show the mode in the status line
 set showcmd            " show selection infoj
 
 set colorcolumn=80
-colorscheme nord
+" i love the chill vibes of nord, but i like the contrast of solarized better. 
+" colorscheme nord
+set termguicolors      " necessary to make things work in vimr
+set background=dark
+colorscheme solarized8
+
+" the following 2 lines are needed to make solarized happy in tmux
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 
 "set comments=b:#,:%,n:>,fb:[-],fb:- " see, help: comments
 " folding settings
@@ -157,7 +166,8 @@ let g:airline_enable_branch = 1
 let g:airline_powerline_fonts = 1        " requires powerline fonts
 let g:airline#extensions#ale#enabled = 1 " show ale errors on statusline
 let g:airline_extensions = ["ale", "branch", "netrw", "tabline", "virtualenv"]
-let g:airline_theme='nord'
+" let g:airline_theme='nord'
+let g:airline_theme='solarized'
 
 " move thru ALE errors
 nmap <silent> <C-k> :ALEPrevious<cr>
