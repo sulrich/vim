@@ -79,3 +79,6 @@
 [submodule "pack/default/start/vim-peekaboo"]
 	path = pack/default/start/vim-peekaboo
 	url = https://github.com/junegunn/vim-peekaboo.git
+[submodule "pack/themes/opt/solarized8"]
+	path = pack/themes/opt/solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
