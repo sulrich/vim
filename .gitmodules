@@ -58,9 +58,6 @@
 [submodule "pack/default/start/ale"]
 	path = pack/default/start/ale
 	url = https://github.com/dense-analysis/ale.git
-[submodule "pack/default/start/notational-fzf-vim"]
-	path = pack/default/start/notational-fzf-vim
-	url = https://github.com/alok/notational-fzf-vim.git
 [submodule "pack/default/start/nord-vim"]
 	path = pack/default/start/nord-vim
 	url = https://github.com/arcticicestudio/nord-vim.git

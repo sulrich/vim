@@ -149,12 +149,6 @@ let g:UltiSnipsJumpForwardTrigger="<M-j>"
 let g:UltiSnipsJumpBackwardTrigger="<M-k>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
 
-" notational velocity for vim
-let g:nv_search_paths = ['~/.notes']
-let g:nv_default_extension = '.md'
-let g:nv_create_note_key = 'ctrl-x'
-let g:nv_create_note_window = 'tabedit'
-
 " nerdtree
 map <C-o> :NERDTreeToggle<CR>
 
