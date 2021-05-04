@@ -1,8 +1,10 @@
 " escape alternative - insert-mode
 imap kj <Esc>
-let mapleader=","             " better than the use of the \
+" set the leader to space. this seems to have better behaviors than ','
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
-set encoding=utf-8            " self-explanator
+set encoding=utf-8            " self-explanatory
 set textwidth=80              " where to wrap
 set shortmess=at              " abbreviate and truncate file messages
 set showmatch                 " briefly flash to the matching element
@@ -13,11 +15,6 @@ set autoread               " if a file changes externally, update buffer
 " address the tabs-vs-spaces debate ...
 set softtabstop=2
 set expandtab
-
-" let's see what happens with the sensible plugin here.
-" set formatoptions=tcqrt2          " XXX - document this better
-" set linebreak
-" set wrapwidth=80
 
 " interface configuration
 set cmdheight=2        " command line two lines high
