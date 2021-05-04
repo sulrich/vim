@@ -30,8 +30,8 @@ set colorcolumn=80
 " i love the chill vibes of nord, but i like the contrast of solarized better. 
 " colorscheme nord
 set termguicolors      " necessary to make things work in vimr
-set background=dark
 colorscheme solarized8
+let g:solarized_italics = 0 " i don't like italics
 
 " the following 2 lines are needed to make solarized happy in tmux
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -191,6 +191,10 @@ if has('nvim')
     au User gitlab* set filetype=markdown
     au User *github.com set filetype=markdown
   augroup END
+
+  " workaruond broken column edit behavior. specific to neovim
+  map p <Plug>(miniyank-autoput)
+  map P <Plug>(miniyank-autoPut)
 
 else
   " vim specific config
