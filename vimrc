@@ -26,14 +26,18 @@ set showcmd            " show selection infoj
 set colorcolumn=80
 " i love the chill vibes of nord, but i like the contrast of solarized better. 
 " colorscheme nord
-set termguicolors      " necessary to make things work in vimr
+" this following is necessary to make things work in vimr. must be loaded before
+" setting colorscheme(s)
+set termguicolors      
+" setting the following prevents the flashing between light and dark on some
+" terminals - i just set it to dark. 
+set background=dark
 colorscheme solarized8
 let g:solarized_italics = 0 " i don't like italics
 
 " the following 2 lines are needed to make solarized happy in tmux
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
 
 "set comments=b:#,:%,n:>,fb:[-],fb:- " see, help: comments
 " folding settings
