@@ -193,5 +193,11 @@ else
 endif
 
 
+let g:fugitive_gitlab_domains = ['https://gitlab.aristanetworks.com']
+
+" import any relevant API keys, etc. 
+source ~/.credentials/vim-api-keys
+
+
 set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
 set runtimepath+=/usr/local/opt/fzf
