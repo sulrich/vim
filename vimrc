@@ -196,8 +196,10 @@ else
   set viminfo=%,'50,\"100,:100,n~/.viminfo
 endif
 
-
 let g:fugitive_gitlab_domains = ['https://gitlab.aristanetworks.com']
+
+" for vim-table-mode use markdown stule corners
+let g:table_mode_corner='|'
 
 " import any relevant API keys, etc. 
 source ~/.credentials/vim-api-keys
