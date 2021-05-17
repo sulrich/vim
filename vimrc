@@ -14,6 +14,8 @@ set autoread               " if a file changes externally, update buffer
 
 " address the tabs-vs-spaces debate ...
 set softtabstop=2
+set shiftwidth=2
+set tabstop=2
 set expandtab
 
 " interface configuration
