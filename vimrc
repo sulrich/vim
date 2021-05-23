@@ -82,24 +82,15 @@ nnoremap <leader><space> :nohlsearch<cr>
 set diffopt=filler,iwhite     " ignore all whitespace and sync
 
 " personal abbreviations
-ab seea  see attached ...
-ab ssig  { snipped - misc .signatures }
-ab sprev { snipped - misc previous correspondence }
 ab x70- ----------------------------------------------------------------------
 ab x70= ======================================================================
-ab cca comments/corrections/additions appreciated
-
-" insert my preferred date time stamp
-iab <expr> dstamp strftime("%Y%m%d")
-iab <expr> dts strftime("%Y%m%d-%H%M")
 
 " misc. additional mappings/functions
 "remove all trailing whitespace by pressing f5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-" send stuff to pb
+" send stuff to pb - internal pb destination
 command! -range=% Pb :<line1>,<line2>w !curl -F c=@- pb
-
 
 " spell check options.
 " note: use 'zg' to add the current word to the dictionary
@@ -120,7 +111,7 @@ nnoremap <silent><leader>r 1z=
 " misc. vim support files and settings. swap, backup, etc.
 set swapfile
 set directory^=~/.vim/swap//
-set writebackup        " protect against crash-during-write
+set nowritebackup        " set for coc integration
 set nobackup           " but do not persist backup after successful write
 set backupcopy=auto    " use rename-and-write-new method whenever safe
 set backupdir^=~/.vim/backup//
@@ -144,12 +135,6 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'shell=sh']
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 autocmd FileType gitcommit let b:EditorConfig_disable = 1
 
-" trigger configuration. do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger="<M-j>"
-let g:UltiSnipsJumpBackwardTrigger="<M-k>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
 
 " nerdtree
@@ -162,14 +147,11 @@ nmap <silent><leader>d <Plug>DashSearch
 let g:airline_enable_branch = 1
 let g:airline_powerline_fonts = 1        " requires powerline fonts
 let g:airline#extensions#ale#enabled = 1 " show ale errors on statusline
-let g:airline_extensions = ["ale", "branch", "netrw", "tabline", "virtualenv"]
-" let g:airline_theme='nord'
+let g:airline_extensions = ["ale", "branch", "netrw", "virtualenv"]
 let g:airline_theme='solarized'
 
-" move thru ALE errors
-nmap <silent> <C-k> :ALEPrevious<cr>
-nmap <silent> <C-j> :ALENext<cr>
-
+" ALE configuration
+" ----------------------------------------------------------------------
 " https://github.com/dense-analysis/ale - see the FAQ
 " note, for the mac, i need to match on the expanded iCloud path.  this is
 " what's going on in the first dict entry here. 
@@ -178,7 +160,12 @@ let g:ale_pattern_options = {
 \  '.*\.notes/.*\.md$': {'ale_enabled': 0},
 \}
 
+" move thru ALE errors
+nmap <silent> <C-k> :ALEPrevious<cr>
+nmap <silent> <C-j> :ALENext<cr>
+
 " handle vim vs. neovim differences
+" ----------------------------------------------------------------------
 if has('nvim')
   let $GHOSTTEXT_SERVER_PORT = 4001
 
