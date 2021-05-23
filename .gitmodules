@@ -37,9 +37,6 @@
 [submodule "pack/default/start/vim-airline"]
 	path = pack/default/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "pack/default/start/vim-ultisnips"]
-	path = pack/default/start/vim-ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "pack/default/start/tabular"]
 	path = pack/default/start/tabular
 	url = https://github.com/godlygeek/tabular.git
