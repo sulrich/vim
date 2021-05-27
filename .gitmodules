@@ -88,3 +88,6 @@
 [submodule "pack/default/start/coc"]
 	path = pack/default/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "pack/default/start/vim-ghost"]
+	path = pack/default/start/vim-ghost
+	url = https://github.com/raghur/vim-ghost.git
