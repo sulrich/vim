@@ -164,17 +164,23 @@ let g:ale_pattern_options = {
 nmap <silent> <C-k> :ALEPrevious<cr>
 nmap <silent> <C-j> :ALENext<cr>
 
+
+" vim-ghost setup - note, this is only enabled under nvim.  but it should be
+" nicely ignored by vim. 
+function! s:SetupGhostBuffer()
+    if match(expand("%:a"), '\v/ghost-(partnerissue|gitlab|github|reddit).*-')
+        set ft=markdown
+    endif
+endfunction
+
+augroup vim-ghost
+    au!
+    au User vim-ghost#connected call s:SetupGhostBuffer()
+augroup END
+
 " handle vim vs. neovim differences
 " ----------------------------------------------------------------------
 if has('nvim')
-  let $GHOSTTEXT_SERVER_PORT = 4001
-
-  augroup nvim_ghost_user_autocommands
-    au User www.reddit.com,www.stackoverflow.com set filetype=markdown
-    au User partnerissue* set filetype=markdown
-    au User gitlab* set filetype=markdown
-    au User *github.com set filetype=markdown
-  augroup END
 
   " workaruond broken column edit behavior. specific to neovim
   map p <Plug>(miniyank-autoput)
