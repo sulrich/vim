@@ -86,8 +86,8 @@ ab x70- ----------------------------------------------------------------------
 ab x70= ======================================================================
 
 " misc. additional mappings/functions
-"remove all trailing whitespace by pressing f5
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" remove all trailing whitespace 
+nnoremap <leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " send stuff to pb - internal pb destination
 command! -range=% Pb :<line1>,<line2>w !curl -F c=@- pb
