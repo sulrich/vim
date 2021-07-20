@@ -85,3 +85,6 @@
 [submodule "pack/default/start/coc"]
 	path = pack/default/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "pack/default/start/vim-markdown-toc"]
+	path = pack/default/start/vim-markdown-toc
+	url = https://github.com/mzlogin/vim-markdown-toc.git
