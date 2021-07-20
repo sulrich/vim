@@ -128,6 +128,11 @@ let g:markdown_folding = 1
 let g:markdown_enable_folding = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'shell=sh']
 
+
+" vim-markdown-toc elements
+let g:vmt_dont_insert_fence = 1
+let g:vmt_list_item_char = "-"
+
 " plugin settings below
 " --------------------------------------------------------------------------
 
