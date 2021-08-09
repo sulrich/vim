@@ -77,7 +77,7 @@
 	path = pack/default/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "pack/default/start/vfugitive-gitlab"]
-	path = pack/default/start/vfugitive-gitlab
+	path = pack/default/start/fugitive-gitlab
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
 [submodule "pack/default/start/vim-table-mode"]
 	path = pack/default/start/vim-table-mode
