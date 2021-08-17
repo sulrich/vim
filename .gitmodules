@@ -10,9 +10,6 @@
 [submodule "pack/default/start/vim-repeat"]
 	path = pack/default/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "pack/default/start/vim-json"]
-	path = pack/default/start/vim-json
-	url = https://github.com/elzr/vim-json.git
 [submodule "pack/default/start/vim-javascript"]
 	path = pack/default/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
