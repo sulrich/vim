@@ -121,7 +121,12 @@ set undodir^=~/.vim/undo//
 " mode specific settings below
 " ---------------------------------------------------------------------------
 
-" markdown files
+" filetype: json 
+" disable quote concealing in json files
+let g:vim_json_conceal=0
+
+
+" filetype: markdown 
 "open markdown files in marked2
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 let g:markdown_folding = 1
