@@ -399,4 +399,4 @@ source ~/.credentials/vim-api-keys
 
 
 set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
-set runtimepath+=/usr/local/opt/fzf
+set runtimepath+=~/.fzf
