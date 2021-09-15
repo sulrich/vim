@@ -147,6 +147,7 @@ autocmd FileType gitcommit let b:EditorConfig_disable = 1
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom-snippets"]
 
+
 " coc configuration
 " ----------------------------------------------------------------------
 
@@ -380,6 +381,15 @@ augroup vim-ghost
     au!
     au User vim-ghost#connected call s:SetupGhostBuffer()
 augroup END
+
+if has("gui_running")
+  " only turn on ghost by default in a gui
+  let g:ghost_autostart = 1
+  let g:ghost_cmd = 'VimR'
+else
+  let g:loaded_ghost = 0
+endif
+
 
 " handle vim vs. neovim differences
 " ----------------------------------------------------------------------
