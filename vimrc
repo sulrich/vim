@@ -414,5 +414,5 @@ source ~/.credentials/vim-api-keys
 
 
 set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
-set runtimepath+=/usr/local/opt/fzf  # mac os brew installed path
-set runtimepath+=~/.fzf              # we installed from git
+set runtimepath+=/usr/local/opt/fzf  " mac os brew installed path
+set runtimepath+=~/.fzf              " we installed from git
