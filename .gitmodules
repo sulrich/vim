@@ -82,6 +82,3 @@
 [submodule "pack/default/start/vim-markdown-toc"]
 	path = pack/default/start/vim-markdown-toc
 	url = https://github.com/mzlogin/vim-markdown-toc.git
-[submodule "pack/default/start/codi"]
-	path = pack/default/start/codi
-	url = https://github.com/metakirby5/codi.vim.git
