@@ -414,4 +414,8 @@ source ~/.credentials/vim-api-keys
 
 
 set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
-set runtimepath+=/usr/local/opt/fzf
+if isdirectory("~/.fzf")
+  set runtimepath+=~/.fzf
+else
+  set runtimepath+=/usr/local/opt/fzf
+endif
