@@ -367,7 +367,7 @@ let g:ale_pattern_options = {
 nmap <silent> <C-k> :ALEPrevious<cr>
 nmap <silent> <C-j> :ALENext<cr>
 
-# misc. handy remappings
+" misc. handy remappings
 nnoremap <silent><leader>l :Buffers<CR>
 
 " vim-ghost setup - note, this is only enabled under nvim.  but it should be
