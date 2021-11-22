@@ -133,7 +133,6 @@ let g:markdown_folding = 1
 let g:markdown_enable_folding = 1
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'shell=sh']
 
-
 " vim-markdown-toc elements
 let g:vmt_dont_insert_fence = 1
 let g:vmt_list_item_char = "-"
@@ -368,6 +367,8 @@ let g:ale_pattern_options = {
 nmap <silent> <C-k> :ALEPrevious<cr>
 nmap <silent> <C-j> :ALENext<cr>
 
+# misc. handy remappings
+nnoremap <silent><leader>l :Buffers<CR>
 
 " vim-ghost setup - note, this is only enabled under nvim.  but it should be
 " nicely ignored by vim. 
@@ -385,7 +386,7 @@ augroup END
 if has("gui_running")
   " only turn on ghost by default in a gui
   let g:ghost_autostart = 1
-  "let g:ghost_cmd = 'VimR'
+  let g:ghost_darwin_app = 'VimR'
 else
   let g:loaded_ghost = 0
 endif
@@ -411,7 +412,6 @@ let g:table_mode_corner='|'
 
 " import any relevant API keys, etc. 
 source ~/.credentials/vim-api-keys
-
 
 set runtimepath+=~/.vim/pack/default/start/vim-ultisnips
 set runtimepath+=/usr/local/opt/fzf  " mac os brew installed path
